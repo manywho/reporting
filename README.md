@@ -10,22 +10,37 @@ internal systems. It currently supports storing States and State Values.
 
 You will need to run your own instance of the application, but it's easy to spin up if you follow these instructions:
 
-#### Building
+### Configuring
 
-To build the service, you will need to have Apache Ant, Maven 3 and a Java 8 implementation installed (OpenJDK and 
-Oracle Java SE are both supported).
-
-You will need to generate a configuration file for the service by running the provided `build.xml` script with Ant, and 
-passing in the following:
+The available configuration settings for the application are:
 
 * **database.type:** Currently supported values are `postgres` and `null` (defaults to `null`)
 * **database.url:** A JDBC connection string, e.g. `jdbc:postgresql://localhost/reporting`
 * **database.username**
 * **database.password**
 
+#### Environment Variables
+
+If you choose to configure the application at runtime, by using environment variables (e.g. if you're running on Heroku),
+you will need to run the application like so:
+
+```bash
+$ DATABASE_TYPE=postgres DATABASE_URL=jdbc:postgresql://localhost/reporting DATABASE_USERNAME=postgres DATABASE_PASSWORD= java -jar target/reporting-*.jar
+```
+
+#### Properties File
+
+If you choose to configure the application using a properties file, you will need to have Apache Ant installed, then 
+you can generate a configuration file by running the provided `build.xml` script:
+
 ```bash
 $ ant -Ddatabase.type=postgres -Ddatabase.url=jdbc:postgresql://localhost/reporting -Ddatabase.username=postgres -Ddatabase.password=password
 ```
+
+### Building
+
+To build the service, you will need to have Maven 3 and a Java 8 implementation installed (OpenJDK and Oracle Java SE 
+are both supported).
 
 Now you can build the runnable shaded JAR:
 
@@ -33,12 +48,12 @@ Now you can build the runnable shaded JAR:
 $ mvn clean package
 ```
 
-#### Running
+### Running
 
 The application is a Jersey JAX-RS application, that by default is run under the Grizzly2 server on port 8080 (if you
 use the packaged JAR).
 
-##### Defaults
+#### Defaults
 
 Running the following command will start the service listening on `0.0.0.0:8080/api/reporting/1`:
 
@@ -46,7 +61,7 @@ Running the following command will start the service listening on `0.0.0.0:8080/
 $ java -jar target/reporting-*.jar
 ```
 
-##### Custom Port
+#### Custom Port
 
 You can specify a custom port to run the application on by passing the `server.port` property when running the JAR. The
 following command will start the service listening on port 9090 (`0.0.0.0:9090/api/reporting/1`):
