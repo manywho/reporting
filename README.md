@@ -10,6 +10,11 @@ internal systems. It currently supports storing States and State Values.
 
 You will need to run your own instance of the application, but it's easy to spin up if you follow these instructions:
 
+### Database
+
+If you choose to store your reporting data in a database, you will find example schemas for the supported databases in
+the [`src/main/sql`](src/main/sql) folder.
+
 ### Configuring
 
 The available configuration settings for the application are:
