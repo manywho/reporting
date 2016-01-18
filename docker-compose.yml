@@ -1,0 +1,4 @@
+service:
+  image: manywho/reporting:$IMAGE_TAG
+  labels:
+    io.rancher.scheduler.global: 'true'
