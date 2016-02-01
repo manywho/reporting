@@ -15,6 +15,10 @@ public class Database implements DatabaseConfiguration {
 
     @Override
     public String getUrl() {
+        if (configuration.has("JDBC_DATABASE_URL")) {
+            return configuration.get("JDBC_DATABASE_URL");
+        }
+
         return configuration.get("database.url");
     }
 
