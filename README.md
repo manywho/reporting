@@ -30,8 +30,14 @@ If you choose to configure the application at runtime, by using environment vari
 you will need to run the application like so:
 
 ```bash
-$ DATABASE_TYPE=postgres DATABASE_URL=jdbc:postgresql://localhost/reporting DATABASE_USERNAME=postgres DATABASE_PASSWORD= java -jar target/reporting-*.jar
+$ DATABASE_TYPE=postgres DATABASE_URL=jdbc:postgresql://localhost/reporting DATABASE_USERNAME=postgres DATABASE_PASSWORD=password java -jar target/reporting-*.jar
 ```
+
+#### Heroku
+
+If you are running the application on Heroku along with one of their relational database addons, no further 
+configuration is necessary as the provided `JDBC_DATABASE_URL` has all the needed information and is detected 
+automatically.
 
 #### Properties File
 

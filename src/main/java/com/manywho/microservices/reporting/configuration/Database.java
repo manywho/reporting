@@ -15,6 +15,7 @@ public class Database implements DatabaseConfiguration {
 
     @Override
     public String getUrl() {
+        // This environment variable has a compatible JDBC URL when running on Heroku, so use it if it's there
         if (configuration.has("JDBC_DATABASE_URL")) {
             return configuration.get("JDBC_DATABASE_URL");
         }
