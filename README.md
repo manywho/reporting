@@ -26,8 +26,8 @@ The available configuration settings for the application are:
 
 #### Environment Variables
 
-If you choose to configure the application at runtime, by using environment variables (e.g. if you're running on Heroku),
-you will need to run the application like so:
+If you choose to configure the application at runtime, by using environment variables, you will need to run the 
+application like so:
 
 ```bash
 $ DATABASE_TYPE=postgres DATABASE_URL=jdbc:postgresql://localhost/reporting DATABASE_USERNAME=postgres DATABASE_PASSWORD=password java -jar target/reporting-*.jar
