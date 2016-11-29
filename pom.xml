@@ -32,6 +32,26 @@
             <groupId>com.manywho</groupId>
             <artifactId>sdk</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sql2o</groupId>
+            <artifactId>sql2o</artifactId>
+            <version>1.6.0-RC3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sql2o.extensions</groupId>
+            <artifactId>sql2o-postgres</artifactId>
+            <version>1.6.0-RC3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1212</version>
+        </dependency>
     </dependencies>
 
     <build>

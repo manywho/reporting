@@ -1,10 +1,10 @@
 ManyWho Reporting
 ======================
 
-[![Build Status](https://travis-ci.org/manywho/reporting.svg?branch=develop)](https://travis-ci.org/manywho/reporting)
+[![Build Status](https://travis-ci.org/manywho/reporting.svg)](https://travis-ci.org/manywho/reporting)
 
 This application gives you the ability to process reporting data created by your Flows in ManyWho, and store it in your
-internal systems. It currently supports storing States and State Values.
+internal systems. It currently supports storing Events, States and State Values.
 
 ## Usage
 
