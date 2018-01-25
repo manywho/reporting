@@ -1,9 +1,16 @@
-FROM jeanblanchard/java:8
+FROM maven:alpine AS build
+
+WORKDIR /usr/src/app
+
+COPY src src
+COPY pom.xml pom.xml
+
+RUN mvn clean package
+
+FROM openjdk:jre-alpine
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "reporting-1.0-SNAPSHOT.jar"]
+COPY --from=build /usr/src/app/target/reporting.jar /usr/src/app/target/reporting.jar
 
-WORKDIR /app
-
-ADD . ./
+CMD ["java", "-Xmx600m", "-jar", "/usr/src/app/target/reporting.jar"]
