@@ -25,11 +25,21 @@ public class Database implements DatabaseConfiguration {
 
     @Override
     public String getUsername() {
+        // This environment variable has a compatible JDBC username when running on Heroku, so use it if it's there
+        if (configuration.has("JDBC_DATABASE_USERNAME")) {
+            return configuration.get("JDBC_DATABASE_USERNAME");
+        }
+
         return configuration.get("database.username");
     }
 
     @Override
     public String getPassword() {
+        // This environment variable has a compatible JDBC password when running on Heroku, so use it if it's there
+        if (configuration.has("JDBC_DATABASE_PASSWORD")) {
+            return configuration.get("JDBC_DATABASE_PASSWORD");
+        }
+
         return configuration.get("database.password");
     }
 }
