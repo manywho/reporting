@@ -11,6 +11,18 @@
     "DATABASE_TYPE": {
       "description": "The type of database where the data will be stored",
       "value": "postgres"
+    },
+    "DATABASE_URL": {
+      "description": "A JDBC URL to the database where the data will be stored. Leave blank if using the default Heroku Addon",
+      "required": false
+    },
+    "DATABASE_USERNAME": {
+      "description": "The username to use when connecting to the database where the data will be stored. Leave blank if using the default Heroku Addon",
+      "required": false
+    },
+    "DATABASE_PASSWORD": {
+      "description": "The password to use when connecting to the database where the data will be stored. Leave blank if using the default Heroku Addon",
+      "required": false
     }
   }
 }
