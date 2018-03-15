@@ -1,8 +1,0 @@
-service:
-  health_check:
-    port: 8080
-    interval: 10000
-    unhealthy_threshold: 5
-    request_line: GET /api/reporting/1/health HTTP/1.0
-    healthy_threshold: 2
-    response_timeout: 2000

@@ -1,10 +1,10 @@
-ManyWho Reporting
-======================
+Boomi Flow Reporting
+====================
 
 [![Build Status](https://travis-ci.org/manywho/reporting.svg)](https://travis-ci.org/manywho/reporting)
 
-This application gives you the ability to process reporting data created by your Flows in ManyWho, and store it in your
-internal systems. It currently supports storing Events, States and State Values.
+This application gives you the ability to process reporting data created by your Boomi Flow states, and store it in your
+internal systems. It currently supports storing events, states and state values.
 
 ## Usage
 
@@ -13,7 +13,7 @@ You will need to run your own instance of the application, but it's easy to spin
 ### Database
 
 If you choose to store your reporting data in a database, you will find example schemas for the supported databases in
-the [`src/main/sql`](src/main/sql) folder.
+the [`src/main/sql`](src/main/sql) folder. Currently, only PostgreSQL is supported.
 
 ### Configuring
 
@@ -33,11 +33,26 @@ application like so:
 $ DATABASE_TYPE=postgres DATABASE_URL=jdbc:postgresql://localhost/reporting DATABASE_USERNAME=postgres DATABASE_PASSWORD=password java -jar target/reporting-*.jar
 ```
 
+#### Docker
+
+A `docker-compose.yml` manifest is supplied, with some example configuration settings. Feel free to modify it to suit
+your requirements, and start it using:
+
+```bash
+$ docker-compose up
+```
+
+More documentation on using Docker Compose can be found [here](https://docs.docker.com/compose/).
+
 #### Heroku
 
-If you are running the application on Heroku along with one of their relational database addons, no further 
-configuration is necessary as the provided `JDBC_DATABASE_URL` has all the needed information and is detected 
-automatically.
+If you are running the application on [Heroku](https://www.heroku.com/) along with one of their relational database
+addons, no further configuration is necessary as the provided `JDBC_DATABASE_URL` has all the needed information and is
+detected automatically.
+
+You can perform a one-click deploy of the application here:
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/manywho/reporting)
 
 #### Properties File
 
@@ -83,7 +98,7 @@ $ java -Dserver.port=9090 -jar target/reporting-*.jar
 
 ## Contributing
 
-Contribution are welcome to the project - whether they are feature requests, improvements or bug fixes! Refer to 
+Contributions are welcome to the project - whether they are feature requests, improvements or bug fixes! Refer to 
 [CONTRIBUTING.md](CONTRIBUTING.md) for our contribution requirements.
 
 ## License

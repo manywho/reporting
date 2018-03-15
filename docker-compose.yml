@@ -1,4 +1,12 @@
-service:
-  image: manywho/reporting:$IMAGE_TAG
-  labels:
-    io.rancher.scheduler.global: 'true'
+version: '3'
+
+services:
+  service:
+    image: quay.io/manywho/reporting:ef595751f27db3f2461d7fd2ece7d3cffc8593b5
+    environment:
+      - DATABASE_TYPE=postgres
+      - DATABASE_URL=jdbc:postgresql://some.database/reporting
+      - DATABASE_USERNAME=reporting
+      - DATABASE_PASSWORD=password
+    ports:
+      - 8080:8080

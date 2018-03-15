@@ -1,0 +1,16 @@
+{
+  "name": "Boomi Flow Reporting",
+  "description": "An application to process and store incoming reporting data from Boomi Flow",
+  "repository": "https://github.com/manywho/reporting",
+  "logo": "https://s3.amazonaws.com/manywho-service-assets/icons/reporting.png",
+  "keywords": ["manywho", "boomi", "flow", "reporting", "plugin", "workflow"],
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "env": {
+    "DATABASE_TYPE": {
+      "description": "The type of database where the data will be stored",
+      "value": "postgres"
+    }
+  }
+}
